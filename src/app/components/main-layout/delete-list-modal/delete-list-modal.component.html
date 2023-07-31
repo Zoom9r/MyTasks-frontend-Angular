@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Warning!</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        Are you sure you want to delete this List and all his statuses and tasks?
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-button mat-dialog-close (click)="onCloseClick()">Close</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="onFinishDeleteList()">Delete</button>
+    </mat-card-actions>
+</mat-card>

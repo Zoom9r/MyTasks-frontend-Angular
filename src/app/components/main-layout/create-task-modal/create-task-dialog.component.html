@@ -1,0 +1,67 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Creating your task...</mat-card-title>
+
+    <mat-card-subtitle>
+      <div>
+
+        <mat-form-field class="input-width">
+          <mat-label>Title</mat-label>
+          <input matInput placeholder="Input new name" type="text" [(ngModel)]="taskName">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="input-width">
+          <mat-label>Description</mat-label>
+          <textarea matInput placeholder="Input new name" type="text" [(ngModel)]="taskDescription"></textarea>
+        </mat-form-field>
+        <br>
+
+        <span>
+          <mat-form-field>
+            <mat-label>{{data.currentList.id!=0&&selectedList.id==0?"current: "+data.currentList.listName:
+              selectedList.id!=0?"current: "+selectedList.listName:'Select list'}}</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let name of data.allListNames" [value]="name" (click)="onListSelected(name.id)">
+                {{name.listName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="selectedList.id==0 && data.currentList.id != 0">
+            <mat-label>{{selectedStatus.id != 0 ?"current: "+selectedStatus.statusName : "Select status"}}</mat-label>
+            <mat-select [(value)]="selectedStatus">
+              <mat-option *ngFor="let status of data.currentList.statuses" [value]="status"
+                (click)="onStatusSelected(status)">
+                {{status.statusName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="selectedList.id != 0">
+            <mat-label>{{selectedStatus.id != 0 && selectedStatus.listOfTasksId == selectedList.id?
+              "current: "+selectedStatus.statusName : "Select status"}}</mat-label>
+            <mat-select [(value)]="selectedStatus">
+              <mat-option *ngFor="let status of selectedList.statuses" [value]="status"
+                (click)="status.listOfTasksId == selectedList.id?onStatusSelected(status):null">
+                {{status.statusName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field *ngIf="selectedList.id==0 && data.currentList.id == 0">
+            <mat-label>Select status</mat-label>
+            <mat-select [(value)]="selectedStatus" [disabled]="true">
+              <mat-option>Status</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+
+      </div>
+    </mat-card-subtitle>
+
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <button mat-button mat-dialog-close (click)="onCloseClick()">Close</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="onFinishCreateTask()">Create</button>
+  </mat-card-actions>
+</mat-card>

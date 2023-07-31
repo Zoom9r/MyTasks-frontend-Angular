@@ -1,0 +1,49 @@
+<mat-drawer-container class="home-container">
+  <mat-drawer #drawer mode="over" class="side-nav-container">
+    <div class="side-nav-content">
+
+      <h2 id="side-nav-title">Available lists</h2>
+      <span id='create-list-btn'>
+        <button mat-fab color="primary" (click)="openCreatelistModal()"><mat-icon>note_add</mat-icon></button>
+      </span>
+      <h3 *ngFor="let list of allListNames" class='list-group'>
+        <button mat-button id='list-name-btn'
+          (click)="fetchCurrentListData(list.id); drawer.toggle()">{{list.listName}}</button>
+        <mat-divider [vertical]="true"></mat-divider>
+        <span id='list-modify-btns'>
+          <button mat-button (click)="openEditListModal(list.id)" id="edit-list-btn">Edit</button>
+          <mat-divider [vertical]="true"></mat-divider>
+          <button mat-button (click)=" openDeleteListModal(list.id)" id="delete-list-btn">Delete</button>
+        </span>
+      </h3>
+    </div>
+  </mat-drawer>
+
+  <div class="side-nav-btn">
+    <button type="button" mat-fab color="primary" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+  <div *ngIf="currentListData.id !=0; else noListSelected" class="main-items-content">
+    <h1 id='my-tasks'>My Tasks</h1>
+    <div class='create-btn-container'>
+      <button (click)="onOpenCreateTaskModal()" id='create-task-btn' mat-raised-button color="primary">Create
+        task</button>
+    </div>
+    <app-list-of-tasks></app-list-of-tasks>
+  </div>
+
+  <ng-template #noListSelected>
+    <h1 id='my-tasks'>My Tasks</h1>
+    <div class='create-btn-container'>
+      <button (click)="onOpenCreateTaskModal()" id='create-task-btn' mat-raised-button color="primary">Create
+        task</button>
+    </div>
+    <button type="button" mat-button (click)="drawer.toggle()" id="select-list-btn">
+      Hi!
+      Select the list you want to work with
+    </button>
+  </ng-template>
+
+</mat-drawer-container>

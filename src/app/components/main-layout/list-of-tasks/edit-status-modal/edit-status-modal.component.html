@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Editing Status...</mat-card-title>
+    <mat-card-subtitle>
+      <mat-form-field>
+        <mat-label>Enter new name</mat-label>
+        <input matInput placeholder="Input name here" type="text" [(ngModel)]="editedStatusName">
+      </mat-form-field>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <button mat-button mat-dialog-close (click)="onCloseClick()">Close</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="onFinishEditStatus()">Edit</button>
+  </mat-card-actions>
+</mat-card>

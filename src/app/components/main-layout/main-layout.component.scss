@@ -1,0 +1,119 @@
+.home-container {
+
+  min-height: 100vh;
+  min-width: 100vh;
+  text-align: center;
+  font-family: cursive;
+  background-image: url('https://storge.pic2.me/upload/274/1_hi-tech.jpg');
+
+  #my-tasks {
+    margin-top: 2%;
+    color: #ffffff;
+    font-size: 60px;
+    font-weight: 500;
+  }
+
+  .side-nav-btn {
+    position: absolute;
+    font-family: cursive;
+    margin-top: 0.5%;
+    margin-left: 0.5%;
+  }
+
+  .side-nav-container {
+    background-image: url('https://i.pinimg.com/736x/f8/1c/d4/f81cd42c52fccb22d0a3fa0ecb0c22d5.jpg');
+    align-content: center;
+    width: 20%;
+    
+    .side-nav-content {
+      margin: 5%;
+    }
+  }
+
+  #side-nav-title {
+    font-family: cursive;
+    font-size: 40px;
+    color: white
+  }
+
+  #create-list-btn {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 10px;
+  }
+
+  .list-group {
+    font-family: cursive;
+    width: 100%;
+    border: 2px solid rgb(87, 81, 81);
+    border-start-end-radius: 4% 30%;
+    border-end-end-radius: 4% 30%;
+    border-start-start-radius: 4% 30%;
+    border-end-start-radius: 4% 30%;
+    margin-bottom: 2%;
+    display: flex;
+    background-color: #ffffff;
+  }
+
+  #list-name-btn {
+    font-family: cursive;
+    padding-left: 5%;
+    padding-right: 0%;
+    overflow: hidden;
+    font-size: 20px;
+    align-self: center;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  #list-modify-btns{
+   
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    
+    #edit-list-btn {
+      font-family: cursive;
+      background-color: #ffc107;
+      border-radius: 0%;
+    }
+
+    #delete-list-btn {
+      font-family: cursive;
+      border-start-end-radius: 11% 23%;
+      border-end-end-radius: 11% 23%;
+      border-start-start-radius: 0% 0%;
+      border-end-start-radius: 0% 0%;
+      background-color: #6c757d;
+      color: aliceblue;
+    }
+  }
+
+  .create-btn-container {
+    padding-left: 50%;
+  }
+
+  .main-items-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  #select-list-btn {
+    font-size: 25px;
+    border-style: dashed;
+    border-width: 2px;
+    margin-top: 5%;
+    width: 60%;
+    color: aliceblue;
+    text-shadow: #000 2px 0px 2px, #000 0px 2px 2px, #000 0px -2px 2px, #000 -2px 0px 2px;
+    height: 500px;
+    font-weight: 400;
+  }
+
+  #create-task-btn {
+    text-shadow: #000 1px 0px 1px, #000 0px 1px 1px, #000 0px -1px 1px, #000 -1px 0px 1px;
+    font-size: 20px;
+    margin-right: 8px;
+  }
+
+}

@@ -1,0 +1,53 @@
+.list-main-items-container {
+
+    justify-self: center;
+
+    #list-name-container {
+        color: aliceblue;
+        text-shadow: #000 2px 0px 2px, #000 0px 2px 2px, #000 0px -2px 2px, #000 -2px 0px 2px;
+        margin-bottom: 2%;
+        font-size: 35px;
+    }
+
+    .status-container {
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    #create-status-btn {
+        font-size: 20px;
+        border-style: dashed;
+        width: auto;
+        max-width: 10%;
+        max-height: 30%;
+        min-width: 10%;
+        text-shadow: #000 2px 0px 2px, #000 0px 2px 2px, #000 0px -2px 2px, #000 -2px 0px 2px;
+        height: 500px;
+        font-weight: 400;
+        color: #0d6efd;
+    }
+
+    .card-title {
+        display: flex;
+        justify-content: space-between;
+
+        .cardNameStyles {
+            text-align: center;
+            font-family: cursive;
+            font-size: 25px;
+            margin-left: 5%;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .status-column {
+        min-width: 20%;
+        margin: 10px;
+        height: fit-content;
+        display: flex;
+        float: left;
+        max-width: 30%;
+        overflow: hidden;
+    }
+}

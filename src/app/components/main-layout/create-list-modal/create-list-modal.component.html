@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Creating new List...</mat-card-title>
+    <mat-card-subtitle>
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Input new name" type="text" [(ngModel)]="listName">
+      </mat-form-field>
+    </mat-card-subtitle>
+
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <button mat-button mat-dialog-close (click)="onCloseClick()">Close</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="onFinishCreateList()">Create</button>
+  </mat-card-actions>
+</mat-card>
