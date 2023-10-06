@@ -8,7 +8,6 @@ import { TaskService } from 'src/app/services/task.service';
 @Component({
   selector: 'app-delete-status-modal',
   templateUrl: './delete-status-modal.component.html',
-  styleUrls: ['./delete-status-modal.component.scss']
 })
 export class DeleteStatusModalComponent {
 

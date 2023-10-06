@@ -1,41 +1,41 @@
-
 <div class="list-main-items-container">
     <h2 id="list-name-container">{{ currentListData.listName}}</h2>
     <h2 *ngFor="let status of currentListData.statuses">
-        <div class="status-column">     
-                <mat-card>
-                    <mat-card-header class="card-title">
-                        <mat-card-title >{{status.statusName}}</mat-card-title>
-                        <button mat-icon-button color="primary" (click)="onOpenEditStatusModal(status)"><mat-icon>edit</mat-icon></button>
-                        <button mat-icon-button color="warn"  (click)="onOpenDeleteStatusModal(status)"><mat-icon>delete_outline</mat-icon></button>
-                    </mat-card-header>
-                    
-                        <h3 *ngFor="let task of currentListData.tasks">
-                            <div *ngIf="task.statusId == status.id">
-                         
-                                    <mat-card>
-                                        <mat-card-header>
-                                            <mat-card-title>{{task.title}}</mat-card-title>
-                                        </mat-card-header>
-                                        <mat-card-content>{{task.description}}</mat-card-content>
-                                        <mat-card-actions>
-                                            
-                                            <button (click)="onOpenEditTaskModal(task.id, status)" mat-icon-button color="primary" >
-                                                <mat-icon>edit</mat-icon>
-                                              </button>
-                                              <button (click)="onDeleteTask(task.id)" mat-icon-button color="warn" >
-                                                <mat-icon>delete_outline</mat-icon>
-                                              </button>
+        <div class="status-column">
+            <mat-card>
+                <mat-card-header class="card-title">
+                    <mat-card-title>{{status.statusName}}</mat-card-title>
+                    <button mat-icon-button color="primary"
+                        (click)="onOpenEditStatusModal(status)"><mat-icon>edit</mat-icon></button>
+                    <button mat-icon-button color="warn"
+                        (click)="onOpenDeleteStatusModal(status)"><mat-icon>delete_outline</mat-icon></button>
+                </mat-card-header>
 
-                                        </mat-card-actions>
-                                    </mat-card>
+                <h3 *ngFor="let task of currentListData.tasks">
+                    <div *ngIf="task.statusId == status.id">
 
-                            </div>
-                        </h3>
-                   
-                </mat-card>
-                <br>
-           
+                        <mat-card>
+                            <mat-card-header>
+                                <mat-card-title>{{task.title}}</mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>{{task.description}}</mat-card-content>
+                            <mat-card-actions>
+
+                                <button (click)="onOpenEditTaskModal(task.id, status)" mat-icon-button color="primary">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                                <button (click)="onDeleteTask(task.id)" mat-icon-button color="warn">
+                                    <mat-icon>delete_outline</mat-icon>
+                                </button>
+
+                            </mat-card-actions>
+                        </mat-card>
+
+                    </div>
+                </h3>
+
+            </mat-card>
+            <br>
         </div>
     </h2>
     <button mat-button (click)="onOpenCreateStatusModal()" id="create-status-btn">Create Status</button>

@@ -1,10 +1,8 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>Creating new status...</mat-card-title>
-
     <mat-card-subtitle>
       <div>
-
         <mat-form-field>
           <mat-label>Title</mat-label>
           <input matInput placeholder="Input new name" type="text" [(ngModel)]="statusName">
@@ -12,7 +10,6 @@
         <br>
       </div>
     </mat-card-subtitle>
-
   </mat-card-header>
   <mat-card-actions align="end">
     <button mat-button mat-dialog-close (click)="onCloseClick()">Close</button>

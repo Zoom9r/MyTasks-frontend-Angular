@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { ListOfTasksModel } from "../models/ListOfTasksModel";
 import { ListOfTasksModelDto } from "../models/ListOfTasksModelDto";
 import { HttpClient } from "@angular/common/http";
-import { Observable, from, map } from "rxjs";
+import { Observable, map } from "rxjs";
 import { GlobalService } from "./global.service";
 
 

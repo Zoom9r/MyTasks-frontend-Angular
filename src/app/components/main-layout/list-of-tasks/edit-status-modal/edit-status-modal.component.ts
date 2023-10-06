@@ -8,7 +8,6 @@ import { EditListModal } from '../../edit-list-modal/edit-list-modal.component';
 @Component({
   selector: 'app-edit-status-modal',
   templateUrl: './edit-status-modal.component.html',
-  styleUrls: ['./edit-status-modal.component.scss']
 })
 export class EditStatusModalComponent {
 

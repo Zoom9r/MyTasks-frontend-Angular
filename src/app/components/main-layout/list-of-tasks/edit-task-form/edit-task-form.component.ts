@@ -26,7 +26,6 @@ export class EditTaskFormModalComponent {
 
   onStatusSelected(status: StatusModel){
     this.selectedStatus = status;
-
   }
 
   onFinishEditTask() {
